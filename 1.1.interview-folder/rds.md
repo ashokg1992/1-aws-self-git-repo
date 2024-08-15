@@ -1,3 +1,60 @@
+============================= my notes ===============
+
+-  aws supports 6 relational database engines.
+- amazon aurora: a) MySQL compatible 2) postgress compatible edition 
+
+#  aurora ( MySQL compatable)
+  - aurora ( postgresssql comatable)
+- MySQL
+-MariaDB
+-postgresssql
+-oracle
+-Microsoft sql server
+-IBM db2
+-
+
+#  generally while crating rds , we select first subnet group.
+-then we select db engine, vpc, authentication type, backup time, encryption, logging,.. 
+- 6gx type ec2 we use.
+- iop1 memory we selct
+- multi AZ db insance  by aws helps to make a copy in other az .
+-  multi az db cluster : 
+
+# read replica:
+- once we create rds, go to actions, then we see  "read replica" option.
+- we have manual method, automatic method to craeate snapshots for rds backup.
+- default backup retendtion days - 7 days
+- reserved db instances: 
+- we can monitor our rds by integrating it with SPLUNK DATADOD SITE24/7  CLOUDWATCH 
+- by u sing performance insights  we can see all details 
+- we can enable error logs, genrael logs, audit logs  at the time rds creaton.
+- these logs can be stored in cloud watch logs group, . 
+- by takeing snapshot and copy it to another region, by this method we  can share rds to other accounts.
+- once rds is crated and if we want to encrypt then procedure is - take snappshot and then create new cluster then yu have option for encryption.
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=============================
 ### RDS Configuration:
 
 1. **What is Amazon RDS?**
