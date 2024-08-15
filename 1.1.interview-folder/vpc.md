@@ -1,3 +1,40 @@
+
+========= my notes =================
+
+ - we can delete default  vpc.
+-
+# which cidr range you are using
+-cidr min 28 max 16
+-by NAT gateway , we can get internet access for all the ec2s which are in private subnets.
+- by using route table we get esatablish network.
+- all the subnets are in same vpc are communicate with local rotute table.
+- to download some patches over internet, or to access some database, external end  points, we use nat gateway .
+# peerings: 	 
+use of peering , steps involved in peering connectivity, limitations , one region to another region peering connectivity, 
+- we check requester and accepeter cidr range is same or conflict, then we can not establish communication
+- it is not-transitive pairing= a to b to c. then we can not get a to c. if we want to a to c , then we establish connection seperatley. then go to acceptor vpc, and accept request  to establish connectivity. then update route tables, 
+
+# Site-to-Site VPN connections
+ custormer gateway: 
+-
+
+# aws network insights:
+- go to aws network manager service-- reachability analyzer, .
+- if any instance is not reachable other ec2, then by using this we can find out issue .
+- path source, path destianation,all details we mention, then it find out.
+- 
+
+- by using  reachability analyzer we find out root cause if server is not reaching other server.
+- 
+
+# transit gateways:
+- if we have 100's vpc, then we can communicate with transigt gateway.
+- it act as hub for  multiple vpcs.
+
+
+ 
+
+========================================
 ### VPC Basics:
 
 1. **What is a Virtual Private Cloud (VPC) in AWS?**

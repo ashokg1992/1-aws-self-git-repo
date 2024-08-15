@@ -1,3 +1,20 @@
+=================== my notes ======================
+- if any user has issue to access resource, then I check in iam "policy simulator" for the cause, and resolve it.
+	- and also in "permission boundary",   I check which services he has access.
+	- 
+-IAM
+-IAM IDENTITY CENTER
+-AWS ORGANIZATIONS
+
+- use case:  integrating with S3 for data import.
+- min password length in iam : 8 characters
+- by default roles contains a set  of policies. so if we  assign  a role then all those permisions are applicable.
+- by using lambda function we can auto rotate aws access keys in iam.
+- managing iam  activity by cloudtrial. clkoudtrila-- event history-- lookup talbe select option -- 
+- in iam , in creentila report we can see all user report , access key expiry , who logged and in etc..
+-aws organizations: 
+=================================================================
+
 **1. What is AWS IAM?**
    - **Answer:** AWS Identity and Access Management (IAM) is a service that allows you to manage users, groups, and roles in your AWS account. It enables you to control access to AWS services and resources securely.
 

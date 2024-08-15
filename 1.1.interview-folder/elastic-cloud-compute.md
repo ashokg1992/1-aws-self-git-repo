@@ -1,3 +1,108 @@
+
+=================== my notes =================
+
+
+- in real time we use m5,c category tpes , not t2 micro.
+- m6g - graviton
+-c7g -
+
+# how you upgrade exsiting ec2 instances
+- we monitor our workload in cloud watch 
+- we CAN NOT MONITOR MENORY UTILIZATION  by clud wath metrics
+-  if cpu metrics is high , then we go for vertical scaling, like this we can decide right instance by see ing in cloud watch metrics.
+- we can not upgrade while running insances. must stop it and  update it,.
+
+# if server is not working , then steps to trouble shhhot
+- check port is opened or not in our SECURITY GROUP - netstat -tnlp
+- our vpc is   contain any  network ACLs , and there any restirictions  applied or not
+- check insance state- is it running or not
+- do we have any problem at os level  , hard ware level , we check it by "status check "
+- system stacus check= hard wware level issue
+- instance status check =  os level issue. go to actions-- monitor and trouble shhot- get system logs, by this we can see all logs of system status.
+- if any boot level issues, then replace it recent snap shot , then all boot level issue resolved
+- check if any servie is  not working or not by using telnet <service name>. telnet <ip> <portnumber>, 
+- ping <ip>  we check instance status
+-  to ping we need to open ICMP traffic at our instant security  group.
+
+
+#
+- instance and ebs are in same AZ
+- volume types: gp2,gp3,iops ipo1, ipo2, through put optimized hdd , cold ssd, 
+- we can not mount ens to multi ec2. we do efs
+
+# ec2 back up strategy, how you do, how automate.
+- by using snapshots we back up ec2.by using we crate n number of volumes
+-for crate snapshots automatically, we use "data life cycle  manager" , crate a role for this, then select tags like volume / ec2 which  need to be sanpshot, slect interval time,  etc.
+- for prod env we retain uppto 5 days sanpshiots, lower env  till 3 days we maintain sanpshots.
+- 
+
+#
+goldern ami/ customed ami
+-in this image we configure /install all packaes settings , so we can use  while launching ec2.
+-
+
+# we can attach multiple netwok interface cards to ec2, 
+
+# load balancers
+- application, network, gateway load balancers
+- application: work in  layer -7, allow http,https protocol, . we do not have option to fix a specific ip to this lb.
+- work in nested round robin, least outstanding algorithm, . 
+- in nested , 1st request goes first , so on. 
+- in least outstanding algortitm,based on many factors it route traffic and balance load.
+- 
+
+- network lb:laer-4, spports tcp,udp tls protocols. we can dedicated fixed ip adderess for this lb.
+- works with flow flash algorithm, 
+
+# target group
+-while creating target group , it ask target type like if it isinstance type/ ip dress/ lambda function, applicatin lb.
+-we can even add on premise servers ip also, but we have communicatin b/n  aws and this,  for this we get communication by vpn connectivity or direct vpn conectivity, 
+- http -80
+https-443
+-once we crate target group, we crate listner on  our load balancer, 
+- we can also map our ssl certificate to this load balancer . 
+
+# auto scaling group
+- helps to maintain high availability of our appliations
+- 
+- types: 
+1.target tracking policy: based on caverage,utilization, 
+2.step scaling policy
+3.simple scaling policy.
+
+
+# launch template.
+- 
+
+# placement groups :
+- Determines how the instances are placed on the underlying hardware
+
+# system manager:
+- to mange ec2s we have system manger , 
+- to enable service b/n ssm service and ec2,  we crate iam role and associated it o ec2. 
+- system anger, session manger?
+-  by session manager we can connecta private sunbenet ec2s.
+- - parameter store: to store passoerds , data base passowrds, custom urls, . we can pass these parameters to the application 
+- patch manger:
+-  maintaince window:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+============================
+
 ### EC2 Instance:
 
 1. **What is an EC2 instance?**
